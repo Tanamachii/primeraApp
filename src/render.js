@@ -2,10 +2,11 @@
 const videoElement = document.querySelector('video');
 const startBtn = document.querySelector('#startBtn');
 const stopBtn = document.querySelector('#stopBtn');
-const chooseVideo = document.querySelector('#chooseVideo');
+const chooseVideo = document.getElementById('videoSelectBtn');
+chooseVideo.onclick = getVideoSources;
 
-const {desktopCapturer,remote} = require('electron');
-const {Menu} = remote;
+const { desktopCapturer , remote } = require('electron');
+const { Menu } = remote;
 
 //Conseguir las ventanas activas para grabar 
 async function getVideoSources() {
